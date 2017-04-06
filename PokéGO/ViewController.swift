@@ -15,6 +15,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     
+    var update = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.manager.delegate = self
@@ -33,11 +35,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    //set region
+    //set region and update at the same position
+    //refreshes the current position on for 4 times before location changes
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if update < 4 {
         let region = MKCoordinateRegionMakeWithDistance(self.manager.location!.coordinate, 400, 400)
-        
         self.mapView.setRegion(region, animated: true)
+        update += 1
+        }else{
+            self.manager.stopUpdatingLocation()
+        }
     }
     
     
