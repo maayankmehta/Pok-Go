@@ -15,6 +15,7 @@
 		EE08D1421E9600130075CA66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE08D1401E9600130075CA66 /* LaunchScreen.storyboard */; };
 		EE08D14B1E9601230075CA66 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE08D14A1E9601230075CA66 /* MapKit.framework */; };
 		EE08D14D1E963FBE0075CA66 /* PokedoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08D14C1E963FBE0075CA66 /* PokedoxViewController.swift */; };
+		EE08D14F1E96459F0075CA66 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08D14E1E96459F0075CA66 /* CDHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EE08D1431E9600130075CA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE08D14A1E9601230075CA66 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EE08D14C1E963FBE0075CA66 /* PokedoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedoxViewController.swift; sourceTree = "<group>"; };
+		EE08D14E1E96459F0075CA66 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +67,12 @@
 				EE08D1341E9600130075CA66 /* AppDelegate.swift */,
 				EE08D1361E9600130075CA66 /* ViewController.swift */,
 				EE08D1381E9600130075CA66 /* Main.storyboard */,
+				EE08D14C1E963FBE0075CA66 /* PokedoxViewController.swift */,
+				EE08D14E1E96459F0075CA66 /* CDHelper.swift */,
 				EE08D13E1E9600130075CA66 /* Assets.xcassets */,
 				EE08D1401E9600130075CA66 /* LaunchScreen.storyboard */,
 				EE08D1431E9600130075CA66 /* Info.plist */,
 				EE08D13B1E9600130075CA66 /* Poke_GO.xcdatamodeld */,
-				EE08D14C1E963FBE0075CA66 /* PokedoxViewController.swift */,
 			);
 			path = "PokéGO";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE08D1371E9600130075CA66 /* ViewController.swift in Sources */,
+				EE08D14F1E96459F0075CA66 /* CDHelper.swift in Sources */,
 				EE08D1351E9600130075CA66 /* AppDelegate.swift in Sources */,
 				EE08D13D1E9600130075CA66 /* Poke_GO.xcdatamodeld in Sources */,
 				EE08D14D1E963FBE0075CA66 /* PokedoxViewController.swift in Sources */,

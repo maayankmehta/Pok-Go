@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var pokemon : [Pokemon] = []
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -34,6 +36,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.mapView.showsUserLocation = true
             
             self.manager.startUpdatingLocation()
+            
+            
+            //from dbhelper
+            pokemon = bringAllPokemon()
             
             //equation to find the annotation
             Timer.scheduledTimer(withTimeInterval: 4, repeats: true, block:{ (timer) in
