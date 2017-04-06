@@ -13,9 +13,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    var manager = CLLocationManager()
+    //reset the location tu current using button
+    @IBAction func userLocationRepositioningButtonPress(_ sender: Any) {
+        let region = MKCoordinateRegionMakeWithDistance(self.manager.location!.coordinate, 400, 400)
+        self.mapView.setRegion(region, animated: true)
+    }
     
+    var manager = CLLocationManager()
     var update = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             self.manager.startUpdatingLocation()
             
+            //equation to find the annotation
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: true, block:{ (timer) in
+                
+                if let coordinate = self.manager.location?.coordinate {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate
+                    annotation.coordinate.latitude += (Double(arc4random_uniform(1000)) - 500) / 300000
+                     annotation.coordinate.longitude += (Double(arc4random_uniform(1000)) - 500) / 300000
+                    self.mapView.addAnnotation(annotation)
+                    
+                    
+                }
+            }
+            )
+            
         }else{
             self.manager.requestWhenInUseAuthorization()
         }
@@ -36,16 +57,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //set region and update at the same position
-    //refreshes the current position on for 4 times before location changes
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if update < 4 {
         let region = MKCoordinateRegionMakeWithDistance(self.manager.location!.coordinate, 400, 400)
         self.mapView.setRegion(region, animated: true)
-        update += 1
+            update += 1
         }else{
             self.manager.stopUpdatingLocation()
         }
-    }
+            }
     
     
 

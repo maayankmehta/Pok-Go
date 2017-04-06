@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,12 +25,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d8M-5n-w0G">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="St2-Li-CwJ">
+                                <rect key="frame" x="16" y="35" width="37" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="1Au-zb-bdb"/>
+                                    <constraint firstAttribute="height" constant="35" id="LYO-om-2ut"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="userLocationRepositioningButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywN-Kj-ZEk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="d8M-5n-w0G" secondAttribute="trailing" id="0Z0-1a-ayr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d8M-5n-w0G" secondAttribute="bottom" id="IpP-pw-cps"/>
+                            <constraint firstItem="St2-Li-CwJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="0xh-ot-cpE"/>
+                            <constraint firstItem="d8M-5n-w0G" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LdE-mm-mik"/>
                             <constraint firstItem="d8M-5n-w0G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l7U-1r-z5q"/>
+                            <constraint firstItem="St2-Li-CwJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nig-8s-gvy"/>
                             <constraint firstItem="d8M-5n-w0G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zQA-ml-HPp"/>
                         </constraints>
                     </view>
@@ -42,4 +56,7 @@
             <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="512" height="512"/>
+    </resources>
 </document>
