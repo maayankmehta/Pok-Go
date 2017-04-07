@@ -12,6 +12,15 @@ import UIKit
 func makeAllPokemon(){
     
     makePokemon(name: "Abra", withThe: "abra")
+    makePokemon(name: "Venonat", withThe: "venonat")
+    makePokemon(name: "Dratini", withThe: "dratini")
+    makePokemon(name: "Caterpie", withThe: "caterpie")
+    makePokemon(name: "Weedle", withThe: "weedle")
+    makePokemon(name: "Rattata", withThe: "rattata")
+    makePokemon(name: "Eevee", withThe: "eevee")
+    makePokemon(name: "Mew", withThe: "mew")
+    makePokemon(name: "Meowth", withThe: "meowth")
+    makePokemon(name: "Squirtle", withThe: "squirtle")
     makePokemon(name: "Pikachu", withThe: "pikachu-2")
     makePokemon(name: "Psyduck", withThe: "psyduck")
     makePokemon(name: "Jigglypuff", withThe: "jigglypuff")

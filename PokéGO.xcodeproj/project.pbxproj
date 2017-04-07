@@ -19,6 +19,7 @@
 		EE08D1511E965C8C0075CA66 /* PokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08D1501E965C8C0075CA66 /* PokemonAnnotation.swift */; };
 		EE0A34121E97653600C70FD9 /* BattleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A34111E97653600C70FD9 /* BattleScene.swift */; };
 		EE0A34141E97655E00C70FD9 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A34131E97655E00C70FD9 /* BattleViewController.swift */; };
+		EED26ED81E97E2A90098AD7E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED26ED71E97E2A90098AD7E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EE08D1501E965C8C0075CA66 /* PokemonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAnnotation.swift; sourceTree = "<group>"; };
 		EE0A34111E97653600C70FD9 /* BattleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleScene.swift; sourceTree = "<group>"; };
 		EE0A34131E97655E00C70FD9 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		EED26ED71E97E2A90098AD7E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				EE08D14E1E96459F0075CA66 /* CDHelper.swift */,
 				EE08D13B1E9600130075CA66 /* Poke_GO.xcdatamodeld */,
 				EE08D13E1E9600130075CA66 /* Assets.xcassets */,
+				EED26ED71E97E2A90098AD7E /* Launch Screen.storyboard */,
 			);
 			path = "PokéGO";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				EE08D1421E9600130075CA66 /* LaunchScreen.storyboard in Resources */,
 				EE08D13F1E9600130075CA66 /* Assets.xcassets in Resources */,
+				EED26ED81E97E2A90098AD7E /* Launch Screen.storyboard in Resources */,
 				EE08D13A1E9600130075CA66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
