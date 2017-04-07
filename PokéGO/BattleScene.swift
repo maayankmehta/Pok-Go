@@ -71,6 +71,11 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokemonSprite.physicsBody?.isDynamic = false
         self.pokemonSprite.physicsBody?.affectedByGravity = false
         self.pokemonSprite.physicsBody?.mass = 5.0
+        
+        //bitmask
+        self.pokemonSprite.physicsBody?.categoryBitMask = kPokemonCategory
+        self.pokemonSprite.physicsBody?.collisionBitMask = kEdgeCategory
+        self.pokemonSprite.physicsBody?.contactTestBitMask = kPokeballCategory
     }
     
     //Pokeball code
@@ -86,6 +91,11 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokeballSprite.physicsBody?.affectedByGravity = true
         self.pokeballSprite.physicsBody?.isDynamic = true
         self.pokeballSprite.physicsBody?.mass = 0.5
+        
+        //bitmask
+        self.pokeballSprite.physicsBody?.categoryBitMask = kPokeballCategory
+        self.pokeballSprite.physicsBody?.collisionBitMask = kPokemonCategory | kEdgeCategory
+        self.pokeballSprite.physicsBody?.contactTestBitMask = kPokemonCategory
         
         
     }
