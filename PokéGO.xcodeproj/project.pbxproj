@@ -73,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				EE08D1381E9600130075CA66 /* Main.storyboard */,
+				EED26ED71E97E2A90098AD7E /* Launch Screen.storyboard */,
 				EE08D1341E9600130075CA66 /* AppDelegate.swift */,
 				EE08D1361E9600130075CA66 /* ViewController.swift */,
 				EE08D14C1E963FBE0075CA66 /* PokedoxViewController.swift */,
@@ -84,7 +85,6 @@
 				EE08D14E1E96459F0075CA66 /* CDHelper.swift */,
 				EE08D13B1E9600130075CA66 /* Poke_GO.xcdatamodeld */,
 				EE08D13E1E9600130075CA66 /* Assets.xcassets */,
-				EED26ED71E97E2A90098AD7E /* Launch Screen.storyboard */,
 			);
 			path = "PokéGO";
 			sourceTree = "<group>";

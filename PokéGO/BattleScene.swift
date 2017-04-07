@@ -35,8 +35,8 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     
     //other variables
     var startCount = false
-    var maxTime = 20
-    var myTime = 20
+    var maxTime = 22
+    var myTime = 22
     var pokemonCaught = false
     var timeLabel = SKLabelNode(fontNamed: "Helvetica")
     
@@ -173,7 +173,7 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     
     func throwPokeball() {
         self.canThrowPokeball = false
-        let dt : CGFloat = 1.0/70
+        let dt : CGFloat = 1.0/5
         
         let distance = CGVector(dx: self.touchPoint.x - self.pokeballSprite.position.x, dy: self.touchPoint.y - self.pokeballSprite.position.y)
         let velocity = CGVector(dx: distance.dx/dt, dy: distance.dy/dt)

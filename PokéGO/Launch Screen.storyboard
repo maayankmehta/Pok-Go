@@ -28,23 +28,23 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ls" translatesAutoresizingMaskIntoConstraints="NO" id="v5t-ll-8uW">
-                                <rect key="frame" x="67" y="269" width="241" height="129"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ls" translatesAutoresizingMaskIntoConstraints="NO" id="xAB-Kr-ghE">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="129" id="CUZ-TU-cpn"/>
-                                    <constraint firstAttribute="width" constant="241" id="M01-4B-WAk"/>
+                                    <constraint firstAttribute="width" constant="240" id="ubv-Tw-HDZ"/>
+                                    <constraint firstAttribute="height" constant="128" id="x2p-AS-ptW"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98205119371414185" green="0.95938436755060352" blue="0.52473468235611886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v5t-ll-8uW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5AQ-u3-aZD"/>
                             <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstItem="v5t-ll-8uW" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="249" id="8qo-4v-Uqo"/>
+                            <constraint firstItem="xAB-Kr-ghE" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="249" id="KUG-7J-n02"/>
+                            <constraint firstItem="xAB-Kr-ghE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="Mrt-xr-Uxa"/>
+                            <constraint firstItem="xAB-Kr-ghE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Rs4-Iy-6LY"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="v5t-ll-8uW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vSL-aZ-HqB"/>
-                            <constraint firstItem="v5t-ll-8uW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="xTB-Cz-jc9"/>
+                            <constraint firstItem="xAB-Kr-ghE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="csX-KD-4uT"/>
                         </constraints>
                     </view>
                 </viewController>
