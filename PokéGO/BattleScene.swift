@@ -38,6 +38,7 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     var maxTime = 20
     var myTime = 20
     var pokemonCaught = false
+    var timeLabel = SKLabelNode(fontNamed: "Helvetica")
     
     
     override func didMove(to view: SKView) {
@@ -60,9 +61,16 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody?.categoryBitMask = kEdgeCategory
         
+        //physic time label
+        self.timeLabel.position = CGPoint(x: self.size.width/2, y: self.size.height*0.9)
+        self.addChild(timeLabel)
+        
+        self.startCount = true
+        
         self.physicsWorld.contactDelegate = self
         
         self.addChild(battleBg)
+        self.makeMessageWith(imageName: "battle")
     }
     
     //Pokemon code
@@ -147,6 +155,19 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     
     
     override func update(_ currentTime: TimeInterval) {
+        
+        if self.startCount{
+            self.maxTime = Int(currentTime) + self.maxTime
+            self.startCount = false
+        }
+        else{
+            self.myTime = self.maxTime - Int(currentTime)
+            self.timeLabel.text = "\(self.myTime)"
+            if self.myTime <= 0 {
+                endgame()
+            }
+            
+        }
         
     }
     
