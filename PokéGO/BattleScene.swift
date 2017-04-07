@@ -33,7 +33,11 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     var touchPoint : CGPoint = CGPoint()
     var canThrowPokeball : Bool = false
     
-    //
+    //other variables
+    var startCount = false
+    var maxTime = 20
+    var myTime = 20
+    var pokemonCaught = false
     
     
     override func didMove(to view: SKView) {
@@ -134,15 +138,16 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         switch  contactMask {
         case kPokemonCategory | kPokeballCategory :
             print("pokemon has been caught")
-            
+            self.pokemonCaught = true
+            endgame()
         default:
-            <#code#>
+            return
         }
     }
     
     
     override func update(_ currentTime: TimeInterval) {
-        <#code#>
+        
     }
     
     func throwPokeball() {
@@ -157,11 +162,36 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     }
     
     func endgame() {
+        self.pokeballSprite.removeFromParent()
+        self.pokemonSprite.removeFromParent()
         
+        if pokemonCaught{
+            self.makeMessageWith(imageName: "gotcha")
+            self.pokemon.timesCaught += 1
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+        }else{
+            self.makeMessageWith(imageName: "footprints")
+            
+            
+        }
+        self.perform(#selector(endbattle), with: nil, afterDelay: 3.0)
     }
     
     func endbattle() {
+        NotificationCenter.default.post(name: NSNotification.Name("CloseBattle"), object: nil)
         
     }
+    
+    func makeMessageWith(imageName: String){
+        let message = SKSpriteNode(imageNamed: imageName)
+        message.size = CGSize(width: 150, height: 150)
+        message.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        message.run(SKAction.sequence([SKAction.wait(forDuration: 2.0),SKAction.removeFromParent()]))
+            
+            self.addChild(message)
+    }
+        
+    
     
 }
