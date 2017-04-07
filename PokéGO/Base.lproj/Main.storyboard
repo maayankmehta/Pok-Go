@@ -60,8 +60,8 @@
                             <constraint firstAttribute="trailing" secondItem="d8M-5n-w0G" secondAttribute="trailing" id="0Z0-1a-ayr"/>
                             <constraint firstItem="St2-Li-CwJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2b2-au-Ksm"/>
                             <constraint firstItem="FNl-R0-iwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Qs-6u-YKN"/>
+                            <constraint firstItem="pdM-W8-e3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C75-0s-tUj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pdM-W8-e3C" secondAttribute="bottom" constant="20" id="DSD-7Q-TeV"/>
-                            <constraint firstItem="pdM-W8-e3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kmr-9T-e27"/>
                             <constraint firstItem="d8M-5n-w0G" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LdE-mm-mik"/>
                             <constraint firstItem="d8M-5n-w0G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l7U-1r-z5q"/>
                             <constraint firstItem="FNl-R0-iwF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tV7-9l-ft7"/>

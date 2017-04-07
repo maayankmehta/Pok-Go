@@ -22,6 +22,7 @@ func makeAllPokemon(){
     makePokemon(name: "Mankey", withThe: "mankey")
     makePokemon(name: "Snorlax", withThe: "snorlax")
     makePokemon(name: "Charizard", withThe: "charizard")
+    makePokemon(name: "Zubat", withThe: "zubat")
     
     (UIApplication.shared.delegate as! AppDelegate).saveContext()
     

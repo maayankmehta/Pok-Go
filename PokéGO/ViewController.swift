@@ -106,6 +106,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
     
     
+    //for selecting the pokemon's region
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        mapView.deselectAnnotation(view.annotation!, animated: true)
+        
+        if view.annotation! is MKUserLocation {
+            return
+        }
+        
+        //zoom settings
+        let region = MKCoordinateRegionMakeWithDistance((view.annotation?.coordinate)!, 150, 150)
+        self.mapView.setRegion(region, animated: true)
+        
+        //setting range around the user in which it can click on annotation
+        if let coordinate = self.manager.location?.coordinate {
+            if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(coordinate)){
+                
+                let battle = BattleViewController()
+                
+                //get a pokemon to send to battleviewcontroller
+                let pokemon = (view.annotation as! PokemonAnnotation).pokemon
+                battle.pokemon = pokemon
+                
+                //telling the viewcontroller to give the access to battleviecontroller(making segue to battlescen)
+                self.present(battle, animated: true, completion: nil)
+                
+                print("in range")
+            }else{
+                print("out of range")
+            }
+        }
+        
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
