@@ -21,6 +21,19 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     let kPokemonSize = CGSize(width: 140, height: 140)
     let kPokeballSize = CGSize(width: 60, height: 60)
     
+    
+    //define bitcategories
+    let kPokeballCategory : UInt32 = 0x1 << 0
+    let kPokemonCategory : UInt32 = 0x1 << 1
+    let kEdgeCategory : UInt32 = 0x1 << 2
+    
+    
+    //physics variable setup
+    var velocity : CGPoint = CGPoint.zero
+    var touchPoint : CGPoint = CGPoint()
+    var canThrowPokeball : Bool = false
+    
+    
     override func didMove(to view: SKView) {
         //print("CatchEM")
         //print(pokemon.name)
@@ -63,6 +76,12 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokeballSprite.position = CGPoint(x: self.size.width/2, y: 100)
         self.pokeballSprite.zPosition = 1
         self.addChild(pokeballSprite)
+        
+        // setup pokeball physics
+        self.pokeballSprite.physicsBody = SKPhysicsBody(circleOfRadius: self.pokeballSprite.frame.size.width/2)
+        self.pokeballSprite.physicsBody?.affectedByGravity = true
+        self.pokeballSprite.physicsBody?.isDynamic = true
+        self.pokeballSprite.physicsBody?.mass = 0.5
         
         
     }
