@@ -24,6 +24,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var manager = CLLocationManager()
     var update = 0
     
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
