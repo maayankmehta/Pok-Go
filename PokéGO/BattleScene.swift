@@ -64,9 +64,13 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         let sequence = SKAction.sequence([moveRight, moveRight.reversed(), moveRight.reversed(), moveRight])
         //keep the pokemon moving forever
         self.pokemonSprite.run(SKAction.repeatForever(sequence))
-        
         self.addChild(pokemonSprite)
         
+        //setup pokemon physics
+        self.pokemonSprite.physicsBody = SKPhysicsBody(rectangleOf: kPokemonSize)
+        self.pokemonSprite.physicsBody?.isDynamic = false
+        self.pokemonSprite.physicsBody?.affectedByGravity = false
+        self.pokemonSprite.physicsBody?.mass = 5.0
     }
     
     //Pokeball code
