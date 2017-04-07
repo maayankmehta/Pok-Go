@@ -33,6 +33,8 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
     var touchPoint : CGPoint = CGPoint()
     var canThrowPokeball : Bool = false
     
+    //
+    
     
     override func didMove(to view: SKView) {
         //print("CatchEM")
@@ -44,12 +46,19 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         battleBg.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         battleBg.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         battleBg.zPosition = -1
-        self.addChild(battleBg)
         
         //call pokemon and pokeball func
         self.perform(#selector(setupPokemon), with: nil, afterDelay: 2.0)
         self.perform(#selector(setupPokeball), with: nil, afterDelay: 2.0)
         
+        
+        //setup physics
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        self.physicsBody?.categoryBitMask = kEdgeCategory
+        
+        self.physicsWorld.contactDelegate = self
+        
+        self.addChild(battleBg)
     }
     
     //Pokemon code
@@ -64,7 +73,6 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         let sequence = SKAction.sequence([moveRight, moveRight.reversed(), moveRight.reversed(), moveRight])
         //keep the pokemon moving forever
         self.pokemonSprite.run(SKAction.repeatForever(sequence))
-        self.addChild(pokemonSprite)
         
         //setup pokemon physics
         self.pokemonSprite.physicsBody = SKPhysicsBody(rectangleOf: kPokemonSize)
@@ -76,6 +84,8 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokemonSprite.physicsBody?.categoryBitMask = kPokemonCategory
         self.pokemonSprite.physicsBody?.collisionBitMask = kEdgeCategory
         self.pokemonSprite.physicsBody?.contactTestBitMask = kPokeballCategory
+        
+        self.addChild(pokemonSprite)
     }
     
     //Pokeball code
@@ -84,7 +94,6 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokeballSprite.size = kPokeballSize
         self.pokeballSprite.position = CGPoint(x: self.size.width/2, y: 100)
         self.pokeballSprite.zPosition = 1
-        self.addChild(pokeballSprite)
         
         // setup pokeball physics
         self.pokeballSprite.physicsBody = SKPhysicsBody(circleOfRadius: self.pokeballSprite.frame.size.width/2)
@@ -97,6 +106,61 @@ class BattleScene : SKScene, SKPhysicsContactDelegate {
         self.pokeballSprite.physicsBody?.collisionBitMask = kPokemonCategory | kEdgeCategory
         self.pokeballSprite.physicsBody?.contactTestBitMask = kPokemonCategory
         
+        self.addChild(pokeballSprite)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let location = touch?.location(in: self)
+        
+        if self.pokeballSprite.frame.contains(location!){
+            self.canThrowPokeball = true
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+            let touch = touches.first
+            let location = touch?.location(in: self)
+            self.touchPoint = location!
+            if self.canThrowPokeball == true {
+                throwPokeball()
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch  contactMask {
+        case kPokemonCategory | kPokeballCategory :
+            print("pokemon has been caught")
+            
+        default:
+            <#code#>
+        }
+    }
+    
+    
+    override func update(_ currentTime: TimeInterval) {
+        <#code#>
+    }
+    
+    func throwPokeball() {
+        self.canThrowPokeball = false
+        let dt : CGFloat = 1.0/50
+        
+        let distance = CGVector(dx: self.touchPoint.x - self.pokeballSprite.position.x, dy: self.touchPoint.y - self.pokeballSprite.position.y)
+        let velocity = CGVector(dx: distance.dx/dt, dy: distance.dy/dt)
+        self.pokeballSprite.physicsBody?.velocity = velocity
+        
+        
+    }
+    
+    func endgame() {
+        
+    }
+    
+    func endbattle() {
         
     }
     
